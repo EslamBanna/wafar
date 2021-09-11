@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "d340e270-afae-49a6-8e6f-0420f1bde124",
+		"name": "wafar host 000webhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get user data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-user-data?id=zoom001",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-user-data"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "zoom001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get categorie foods",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-categorie-foods?categorieId=1",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-categorie-foods"
+					],
+					"query": [
+						{
+							"key": "categorieId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all resturant foods",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-resturant-foods?resturantId=1",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-resturant-foods"
+					],
+					"query": [
+						{
+							"key": "resturantId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all resturant categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-resturant-categories?resturantId=1",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-resturant-categories"
+					],
+					"query": [
+						{
+							"key": "resturantId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all resturants",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-all-resturants",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-all-resturants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/update-user-info?id=123456789987654",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"update-user-info"
+					],
+					"query": [
+						{
+							"key": "isVerified",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "123456789987654"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/F:/web/images/21.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/create-user?email=zoom@test.com001&id=zoom001&name=zoom001&phone=35131",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"create-user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "zoom@test.com001"
+						},
+						{
+							"key": "id",
+							"value": "zoom001"
+						},
+						{
+							"key": "name",
+							"value": "zoom001"
+						},
+						{
+							"key": "phone",
+							"value": "35131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/update-user-info?isVerified=true&id=zoom00",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"update-user-info"
+					],
+					"query": [
+						{
+							"key": "isVerified",
+							"value": "true"
+						},
+						{
+							"key": "id",
+							"value": "zoom00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all discounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://wafar2021.000webhostapp.com/api/user/get-all-discoutns",
+					"protocol": "http",
+					"host": [
+						"wafar2021",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"get-all-discoutns"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

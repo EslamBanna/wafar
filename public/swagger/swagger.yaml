@@ -1,0 +1,445 @@
+swagger: '2.0'
+info:
+  description: |
+    This is a sample Petstore server that devolped by Eslam Elbanna
+  version: 1.0.0
+  title: Wafar project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+# host: petstore.swagger.io
+# basePath: /v2
+tags:
+- name: user
+  description: Operations about user
+  externalDocs:
+    description: Find out more about our store
+    url: http://swagger.io
+# schemes:
+# - http
+paths:
+
+  /create-user:
+    post:
+      tags:
+      - user
+      summary: Create new user
+      description: This is create a new user in the system.
+      operationId: createUser
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: id
+        description: user id
+        required: true
+        type: string
+      - in: query
+        name: email
+        description: user email
+        required: true
+        type: string
+      - in: query
+        name: name
+        description: user name
+        required: true
+        type: string
+      - in: query
+        name: phone
+        description: user phone
+        required: true
+        type: string
+      responses:
+        default:
+          description: successful operation
+  /get-user-data:
+    post:
+      tags:
+      - user
+      summary: get user data by id
+      operationId: getuserData
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: id
+        description: user id
+        required: true
+        type: string
+      responses:
+        default:
+          description: successful operation
+  /update-user-info:
+    post:
+      tags:
+      - user
+      summary: update user data
+      operationId: updateUserData
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: id
+        description: user id
+        type: string
+        required: true
+      - in: query
+        name: email
+        description: user email
+        type: string
+      - in: query
+        name: name
+        description: user name
+        type: string
+      - in: query
+        name: phone
+        description: user phone
+        type: string
+      - in: query
+        name: photo
+        description: user photo
+        type: string
+      - in: query
+        name: address
+        description: user address
+        type: string
+      - in: query
+        name: latitude
+        description: user latitude
+        type: string
+      - in: query
+        name: longitude
+        description: user longitude
+        type: string
+      - in: query
+        name: preferdLang
+        description: user preferdLang
+        type: string
+      - in: query
+        name: isVerified
+        description: user isVerified
+        type: string
+        enum: [true, false]
+      responses:
+        default:
+          description: successful operation
+  /get-all-services:
+    post:
+      tags:
+      - user
+      summary: get all services in the system
+      operationId: getAllServices
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: paginateCount
+        description: pagination count per request
+        type: integer
+      - in: query
+        name: page
+        description: page number
+        type: integer
+      responses:
+        default:
+          description: successful operation
+  /get-all-resturants:
+    post:
+      tags:
+      - user
+      summary: get all resturants in the system
+      operationId: getAllResturants
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: paginateCount
+        description: pagination count per request
+        type: integer
+      - in: query
+        name: page
+        description: page number
+        type: integer
+      responses:
+        default:
+          description: successful operation
+  /get-resturant-categories:
+    post:
+      tags:
+      - user
+      summary: get all resturant categories in the system
+      operationId: getAllCategories
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: resturantId
+        description: the resturant id
+        type: integer
+        required: true
+      responses:
+        default:
+          description: successful operation
+  /get-resturant-foods:
+    post:
+      tags:
+      - user
+      summary: get all resturant foods in the system
+      operationId: getAllFoods
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: resturantId
+        description: the resturant id
+        type: integer
+        required: true
+      - in: query
+        name: paginateCount
+        description: pagination count per request
+        type: integer
+      - in: query
+        name: page
+        description: page number
+        type: integer
+      responses:
+        default:
+          description: successful operation
+  /get-categorie-foods:
+    post:
+      tags:
+      - user
+      summary: get all categorie foods in the system
+      operationId: getAllCategorieFoods
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: query
+        name: categorieId
+        description: the categorie id
+        type: integer
+        required: true
+      - in: query
+        name: paginateCount
+        description: pagination count per request
+        type: integer
+      - in: query
+        name: page
+        description: page number
+        type: integer
+      responses:
+        default:
+          description: successful operation
+  /get-all-discoutns:
+    get:
+      tags:
+      - user
+      summary: get all categorie foods in the system
+      operationId: getAllDiscounts
+      produces:
+      - application/json
+      - application/xml
+      responses:
+        default:
+          description: successful operation
+definitions:
+  Food:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      resturant_id:
+        type: integer
+        format: int64
+      categorie_id:
+        type: integer
+        format: int64
+      calorie:
+        type: integer
+        format: int64
+      price:
+        type: integer
+        format: int64
+      rate:
+        type: double
+      cookTime:
+        type: integer
+        format: int64
+      name:
+        type: string
+      photo:
+        type: text
+      icon:
+        type: string
+      ingredients:
+        type: string
+      description:
+        type: string
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+    xml:
+      name: Order
+  FoodCategorie:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      photo:
+        type: text
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+    xml:
+      name: Category
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+        format: email
+      phone:
+        type: string
+      photo:
+        type: text
+      address:
+        type: text
+      latitude:
+        type: text
+      longitude:
+        type: text
+      preferdLang:
+        type: string
+      isVerified:
+        type: string
+        enum: [true, false]
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+    xml:
+      name: User
+  Resturant:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      photo:
+        type: text
+      rate:
+        type: double
+        format: int64
+      address:
+        type: text
+      latitude:
+        type: text
+      longitude:
+        type: text
+      phone:
+        type: string
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+    xml:
+      name: Tag
+  ResturantCategorie:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      resturant_id:
+        type: integer
+        format: int64
+      categorie_id:
+        type: integer
+        format: int64
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+    xml:
+      name: Pet
+  Service:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      ar_name:
+        type: string
+      en_name:
+        type: string
+      photo:
+        type: text
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+  Discount:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      related_object:
+        type: integer
+      service_id:
+        type: integer
+      type:
+        type: boolean
+        enum: ['0 => value', '1 => precent']
+      value:
+        type: double
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+# Added by API Auto Mocking Plugin
+host: localhost:8000
+basePath: /api/user
+schemes:
+ - https
+ - http
